@@ -108,6 +108,8 @@ class _MyHomePageState extends State<MyHomePage> {
             const Text(
               'You have pushed the button this many times:',
             ),
+            Image.asset('assets/images/star_6570043.png'), // Display the image
+            SizedBox(height: 5),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
