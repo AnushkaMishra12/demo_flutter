@@ -30,11 +30,14 @@ class DashBoard extends StatelessWidget {
                   tooltip: 'Setting Icon',
                   onPressed: () {},
                 ), //IconButton
-              ], //<Widget>[]
+              ],
+              //<Widget>[]
               leading: IconButton(
                 icon: const FaIcon(FontAwesomeIcons.arrowLeft),
                 tooltip: 'Menu Icon',
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/login');
+                },
               ),
               systemOverlayStyle: SystemUiOverlayStyle.light,
             ),
@@ -164,7 +167,9 @@ class DashBoard extends StatelessWidget {
                                       fontWeight: FontWeight.bold),
                                 ),
                               ),
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushNamed(context, '/discover');
+                              },
                             ),
                           ),
                         ],

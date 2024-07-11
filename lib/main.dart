@@ -1,4 +1,5 @@
 import 'package:demo_flutter/screens/auth/view/Dash/DashBoard.dart';
+import 'package:demo_flutter/screens/auth/view/Discover/DiscoverScreen.dart';
 import 'package:demo_flutter/screens/auth/view/SignUp/SIgnUp.dart';
 import 'package:demo_flutter/screens/auth/view/login/LoginScreen.dart';
 import 'package:flutter/material.dart';
@@ -22,8 +23,10 @@ class MyApp extends StatelessWidget {
       title: 'flutter_demo',
       home: const LoginScreen(),
       routes: {
+        '/login': (context) => const LoginScreen(),
         '/dashRoutes': (context) => const DashBoard(),
         '/signUpRoutes': (context) => const SignUp(),
+        '/discover': (context) => const DiscoverScreen(),
       },
     );
   }
