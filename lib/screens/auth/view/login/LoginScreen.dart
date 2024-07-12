@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
-
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
@@ -13,13 +12,13 @@ class LoginScreen extends StatelessWidget {
       backgroundColor: Theme.of(context).colorScheme.surface,
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(
-              top: 50, left: 16, right: 16, bottom: 10),
+          padding:
+              const EdgeInsets.only(top: 50, left: 16, right: 16, bottom: 10),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-                Text(
+              Text(
                 'Login as Student',
                 style: TextStyle(
                   fontSize: 24,
@@ -76,9 +75,10 @@ class LoginScreen extends StatelessWidget {
                 alignment: Alignment.topRight,
                 child: TextButton(
                   onPressed: () {},
-                  child:   Text(
+                  child: Text(
                     'Forgot Password ?',
-                    style: TextStyle(color: Theme.of(context).colorScheme.secondary),
+                    style: TextStyle(
+                        color: Theme.of(context).colorScheme.secondary),
                   ),
                 ),
               ),
@@ -102,7 +102,7 @@ class LoginScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8),
                     color: Theme.of(context).colorScheme.secondary),
                 child: TextButton(
-                  child:   Center(
+                  child: Center(
                     child: Text(
                       'Login',
                       style: TextStyle(
@@ -128,9 +128,10 @@ class LoginScreen extends StatelessWidget {
                         onPressed: () {
                           Get.toNamed(AppRoutes.signUp);
                         },
-                        child:   Text(
+                        child: Text(
                           'Register here',
-                          style: TextStyle(color: Theme.of(context).colorScheme.secondary),
+                          style: TextStyle(
+                              color: Theme.of(context).colorScheme.secondary),
                         ),
                       ),
                     ],

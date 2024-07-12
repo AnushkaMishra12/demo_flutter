@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
@@ -33,7 +32,6 @@ class DashboardScreen extends StatelessWidget {
             Get.toNamed(AppRoutes.login);
           },
         ),
-
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -47,12 +45,18 @@ class DashboardScreen extends StatelessWidget {
                 child: Row(
                   children: [
                     IconButton(
-                      icon:   FaIcon(FontAwesomeIcons.search,color: Theme.of(context).colorScheme.onSecondaryFixed,),
+                      icon: FaIcon(
+                        FontAwesomeIcons.search,
+                        color: Theme.of(context).colorScheme.onSecondaryFixed,
+                      ),
                       onPressed: () {},
                     ),
-                      Text(
+                    Text(
                       'Finding Tutor',
-                      style: TextStyle(fontSize: 15, color: Theme.of(context).colorScheme.onSecondaryFixed),
+                      style: TextStyle(
+                          fontSize: 15,
+                          color:
+                              Theme.of(context).colorScheme.onSecondaryFixed),
                     ),
                   ],
                 )),
@@ -65,7 +69,7 @@ class DashboardScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10)),
               child: Container(
                 margin: const EdgeInsets.all(10),
-                child:   Text(
+                child: Text(
                   'What do you want to \nlearn Today ?',
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
@@ -77,7 +81,6 @@ class DashboardScreen extends StatelessWidget {
             Container(
               margin: const EdgeInsets.all(10),
               width: double.infinity,
-              // height: double.maxFinite,we don't assign height to take wrap content like height
               decoration: BoxDecoration(
                   color: Theme.of(context).colorScheme.surfaceContainer,
                   borderRadius: BorderRadius.circular(10)),
@@ -87,7 +90,7 @@ class DashboardScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                      Text(
+                    Text(
                       'Looking Tutor For ',
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
@@ -101,10 +104,11 @@ class DashboardScreen extends StatelessWidget {
                       decoration: BoxDecoration(
                           color: Theme.of(context).colorScheme.onPrimary,
                           borderRadius: BorderRadius.circular(8)),
-                      child:   Text(
+                      child: Text(
                         'Please Enter Subject',
-                        style:
-                        TextStyle(fontSize: 15, color: Theme.of(context).colorScheme.primary),
+                        style: TextStyle(
+                            fontSize: 15,
+                            color: Theme.of(context).colorScheme.primary),
                       ),
                     ),
                     Container(
@@ -114,10 +118,11 @@ class DashboardScreen extends StatelessWidget {
                       decoration: BoxDecoration(
                           color: Theme.of(context).colorScheme.onPrimary,
                           borderRadius: BorderRadius.circular(8)),
-                      child:   Text(
+                      child: Text(
                         'Please Enter Subject',
-                        style:
-                        TextStyle(fontSize: 15, color: Theme.of(context).colorScheme.primary),
+                        style: TextStyle(
+                            fontSize: 15,
+                            color: Theme.of(context).colorScheme.primary),
                       ),
                     ),
                     Container(
@@ -127,10 +132,11 @@ class DashboardScreen extends StatelessWidget {
                       decoration: BoxDecoration(
                           color: Theme.of(context).colorScheme.onPrimary,
                           borderRadius: BorderRadius.circular(8)),
-                      child:   Text(
+                      child: Text(
                         'Please Enter Subject',
-                        style:
-                        TextStyle(fontSize: 15, color: Theme.of(context).colorScheme.primary),
+                        style: TextStyle(
+                            fontSize: 15,
+                            color: Theme.of(context).colorScheme.primary),
                       ),
                     ),
                     Container(
@@ -140,10 +146,11 @@ class DashboardScreen extends StatelessWidget {
                       decoration: BoxDecoration(
                           color: Theme.of(context).colorScheme.onPrimary,
                           borderRadius: BorderRadius.circular(8)),
-                      child:   Text(
+                      child: Text(
                         'Please Enter Subject',
-                        style:
-                        TextStyle(fontSize: 15, color: Theme.of(context).colorScheme.primary),
+                        style: TextStyle(
+                            fontSize: 15,
+                            color: Theme.of(context).colorScheme.primary),
                       ),
                     ),
                     Container(

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'SignUpController.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
@@ -15,12 +13,10 @@ class SignUpScreen extends StatelessWidget {
           color: Colors.greenAccent,
           child: const Center(
               child: Text(
-                'Hello Developers !!',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold),
-              )),
+            'Hello Developers !!',
+            style: TextStyle(
+                color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold),
+          )),
         ),
       ),
       //

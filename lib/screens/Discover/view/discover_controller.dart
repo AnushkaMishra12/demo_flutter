@@ -1,33 +1,30 @@
-import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 import '../data/Tutor.dart';
 
-
-
 class DiscoverController extends GetxController {
-  static DiscoverController get to =>Get.find();
+  static DiscoverController get to => Get.find();
 
-    var tutors = <Tutor>[].obs;
-   // RxList<Tutor> tutors=RxList([]);
+  var tutors = <Tutor>[].obs;
+  // RxList<Tutor> tutors=RxList([]);
   //  RxInt id=RxInt(0);
-    //  var id=0.obs;
- // var dat= Tutor("","","").obs;
- // Rx<Tutor> data=Rx(Tutor("","",""));
+  //  var id=0.obs;
+  // var dat= Tutor("","","").obs;
+  // Rx<Tutor> data=Rx(Tutor("","",""));
 
   @override
   void onInit() {
-  //  getTutors();
+    //  getTutors();
     super.onInit();
   }
 
   void getTutors() async {
-    tutors.value=[
-      Tutor('Anushka', 'Science + Mathematics', 'assets/images/star_6570043.png'),
+    tutors.value = [
       Tutor(
-          'Computer', 'English + Mathematics', 'assets/images/star_6570043.png'),
+          'Anushka', 'Science + Mathematics', 'assets/images/star_6570043.png'),
+      Tutor('Computer', 'English + Mathematics',
+          'assets/images/star_6570043.png'),
       Tutor('Android', 'Science + English', 'assets/images/star_6570043.png'),
     ];
   }
 }
-

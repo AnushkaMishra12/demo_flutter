@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import '../../../routes/AppRoutes.dart';
 import '../../../widgets/TutorCard.dart';
 import 'discover_controller.dart';
-
-
 
 class DiscoverScreen extends StatelessWidget {
   const DiscoverScreen({super.key});
@@ -14,11 +11,10 @@ class DiscoverScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-
         title: const Text("Discover Tutor"),
         actions: <Widget>[
           IconButton(
-            icon:   const FaIcon(
+            icon: const FaIcon(
               FontAwesomeIcons.bell,
             ),
             tooltip: 'Setting Icon',
@@ -29,7 +25,7 @@ class DiscoverScreen extends StatelessWidget {
         ],
         //<Widget>[]
         leading: IconButton(
-          icon:   const FaIcon(
+          icon: const FaIcon(
             FontAwesomeIcons.arrowLeft,
           ),
           tooltip: 'Back Icon',
@@ -38,7 +34,8 @@ class DiscoverScreen extends StatelessWidget {
           },
         ),
       ),
-      body: Obx(() => ListView.builder(
+      body: Obx(
+        () => ListView.builder(
           itemCount: DiscoverController.to.tutors.length,
           itemBuilder: (context, index) {
             return TutorCard(tutor: DiscoverController.to.tutors[index]);
@@ -48,4 +45,3 @@ class DiscoverScreen extends StatelessWidget {
     );
   }
 }
-
