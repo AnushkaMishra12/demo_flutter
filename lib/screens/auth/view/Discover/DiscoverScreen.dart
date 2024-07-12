@@ -47,7 +47,7 @@ class DiscoverScreen extends StatelessWidget {
               return Column(
                 children: [
                   TutorCard(tutor: controller.tutors[index]),
-                  const SizedBox(height: 10), // Add spacing between cards
+                  const SizedBox(height: 8), // Add spacing between cards
                 ],
               );
             },
