@@ -1,13 +1,18 @@
-import 'package:demo_flutter/routes/AppRoutes.dart';
+import 'package:demo_flutter/screens/Dashboard/view/DashBoardScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+
+import '../../../../routes/AppRoutes.dart';
+import 'LoginController.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final LoginController loginController = Get.put(LoginController());
+
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
       body: SingleChildScrollView(
@@ -39,6 +44,7 @@ class LoginScreen extends StatelessWidget {
                 margin: const EdgeInsets.all(10),
                 child: Center(
                   child: TextFormField(
+                    controller: loginController.usernameController,
                     decoration: InputDecoration(
                       labelText: 'Enter Email Address',
                       prefixIcon: const Padding(
@@ -57,6 +63,7 @@ class LoginScreen extends StatelessWidget {
                 margin: const EdgeInsets.all(10),
                 child: Center(
                   child: TextFormField(
+                    controller: loginController.passwordController,
                     obscureText: true,
                     decoration: InputDecoration(
                       labelText: 'Enter Password',
@@ -78,43 +85,52 @@ class LoginScreen extends StatelessWidget {
                   child: Text(
                     'Forgot Password ?',
                     style: TextStyle(
-                        color: Theme.of(context).colorScheme.secondary),
+                      color: Theme.of(context).colorScheme.secondary,
+                    ),
                   ),
                 ),
               ),
               const SizedBox(height: 20),
-              // ElevatedButton(
-              //     onPressed: () {
-              //       Navigator.pushNamed(context, '/dashRoutes');
-              //     },
-              //     style: ElevatedButton.styleFrom(
-              //       padding: const EdgeInsets.symmetric(
-              //           horizontal: 50, vertical: 15),
-              //       textStyle: const TextStyle(
-              //         fontSize: 16,
-              //         fontWeight: FontWeight.bold,
-              //       ),
-              //     ),
-              //     child: const Text('Login')),
               Container(
                 margin: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    color: Theme.of(context).colorScheme.secondary),
-                child: TextButton(
-                  child: Center(
-                    child: Text(
-                      'Login',
-                      style: TextStyle(
-                          color: Theme.of(context).colorScheme.onSecondary,
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                  onPressed: () {
-                    Get.toNamed(AppRoutes.dashboard);
-                  },
+                  borderRadius: BorderRadius.circular(8),
+                  color: Theme.of(context).colorScheme.secondary,
                 ),
+                child: Obx(() {
+                  return TextButton(
+                    child: Center(
+                      child: loginController.isLoading.value
+                          ? CircularProgressIndicator(
+                              color: Theme.of(context).colorScheme.onSecondary,
+                            )
+                          : Text(
+                              'Login',
+                              style: TextStyle(
+                                color:
+                                    Theme.of(context).colorScheme.onSecondary,
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                    ),
+                    onPressed: () async {
+                      bool success = await loginController.login();
+
+                      if (success) {
+                        Get.to(() => DashboardScreen(
+                            email: loginController.loginResponse.value.email ??
+                                'No email'));
+                      } else {
+                        Get.snackbar(
+                          "Login Failed",
+                          "Incorrect username or password",
+                          snackPosition: SnackPosition.BOTTOM,
+                        );
+                      }
+                    },
+                  );
+                }),
               ),
               const SizedBox(height: 20),
               Center(
@@ -131,7 +147,8 @@ class LoginScreen extends StatelessWidget {
                         child: Text(
                           'Register here',
                           style: TextStyle(
-                              color: Theme.of(context).colorScheme.secondary),
+                            color: Theme.of(context).colorScheme.secondary,
+                          ),
                         ),
                       ),
                     ],

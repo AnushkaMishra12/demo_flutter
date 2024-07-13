@@ -20,10 +20,8 @@ class DiscoverController extends GetxController {
 
   void getTutors() async {
     tutors.value = [
-      Tutor(
-          'Anushka', 'Science + Mathematics', 'assets/images/star_6570043.png'),
-      Tutor('Computer', 'English + Mathematics',
-          'assets/images/star_6570043.png'),
+      Tutor('Anushka', 'Science ', 'assets/images/star_6570043.png'),
+      Tutor('Computer', 'English ', 'assets/images/star_6570043.png'),
       Tutor('Android', 'Science + English', 'assets/images/star_6570043.png'),
     ];
   }

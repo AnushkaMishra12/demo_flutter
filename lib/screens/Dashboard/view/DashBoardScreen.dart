@@ -5,7 +5,8 @@ import 'package:get/get.dart';
 import '../../../routes/AppRoutes.dart';
 
 class DashboardScreen extends StatelessWidget {
-  const DashboardScreen({super.key});
+  final String email;
+  const DashboardScreen({super.key, required this.email});
 
   @override
   Widget build(BuildContext context) {
@@ -69,12 +70,28 @@ class DashboardScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10)),
               child: Container(
                 margin: const EdgeInsets.all(10),
-                child: Text(
-                  'What do you want to \nlearn Today ?',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Theme.of(context).colorScheme.onPrimary,
-                      fontSize: 18),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'What do you want to \nlearn Today ?',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Theme.of(context).colorScheme.onPrimary,
+                          fontSize: 18),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.only(top: 30, left: 10),
+                      child: Text(
+                        'Email: $email',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Theme.of(context).colorScheme.error,
+                            fontSize: 18),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
