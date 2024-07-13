@@ -2,11 +2,11 @@ import 'package:demo_flutter/screens/Discover/view/DiscoverScreen.dart';
 import 'package:demo_flutter/screens/Discover/view/discover_binding.dart';
 import 'package:demo_flutter/screens/auth/view/SignUp/SIgnUpScreen.dart';
 import 'package:demo_flutter/screens/auth/view/SignUp/signup_binding.dart';
-import 'package:demo_flutter/screens/auth/view/login/LoginScreen.dart';
-import 'package:demo_flutter/screens/auth/view/login/login_binding.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import '../screens/Dashboard/view/DashBoardScreen.dart';
 import '../screens/Dashboard/view/dashboard_binding.dart';
+import '../screens/auth/view/login/view/LoginScreen.dart';
+import '../screens/auth/view/login/view/login_binding.dart';
 import 'AppRoutes.dart';
 
 class AppPages {
