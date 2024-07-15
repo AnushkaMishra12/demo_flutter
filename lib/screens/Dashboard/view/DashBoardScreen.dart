@@ -1,13 +1,11 @@
+import 'package:demo_flutter/screens/Dashboard/view/DashboardController.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-
 import '../../../routes/AppRoutes.dart';
 
 class DashboardScreen extends StatelessWidget {
-  final String email;
-  const DashboardScreen({super.key, required this.email});
-
+  const DashboardScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,7 +82,7 @@ class DashboardScreen extends StatelessWidget {
                     Container(
                       margin: const EdgeInsets.only(top: 30, left: 10),
                       child: Text(
-                        'Email: $email',
+                        'Email: ${DashboardController.to.logInData.email}',
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Theme.of(context).colorScheme.error,

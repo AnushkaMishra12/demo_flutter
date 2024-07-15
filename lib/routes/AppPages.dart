@@ -23,7 +23,7 @@ class AppPages {
     ),
     GetPage(
       name: AppRoutes.dashboard,
-      page: () => const DashboardScreen(email: ''),
+      page: () => const DashboardScreen(),
       binding: DashboardBinding(),
     ),
     GetPage(

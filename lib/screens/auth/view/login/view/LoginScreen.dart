@@ -113,20 +113,8 @@ class LoginScreen extends StatelessWidget {
                               ),
                             ),
                     ),
-                    onPressed: () async {
-                      bool success = await loginController.login();
-
-                      if (success) {
-                        Get.to(() => DashboardScreen(
-                            email: loginController.loginResponse.value.email ??
-                                'No email'));
-                      } else {
-                        Get.snackbar(
-                          "Login Failed",
-                          "Incorrect username or password",
-                          snackPosition: SnackPosition.BOTTOM,
-                        );
-                      }
+                    onPressed: () {
+                      loginController.login();
                     },
                   );
                 }),
