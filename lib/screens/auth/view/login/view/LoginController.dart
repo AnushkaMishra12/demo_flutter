@@ -1,9 +1,7 @@
 import 'package:demo_flutter/routes/AppRoutes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:http/http.dart' as http;
 import 'dart:convert';
-import '../../../../Dashboard/view/DashBoardScreen.dart';
 import '../../../data/AuthRepo.dart';
 import '../data/login_response.dart';
 
